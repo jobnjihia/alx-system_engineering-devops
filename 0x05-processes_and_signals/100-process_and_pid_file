@@ -7,12 +7,13 @@
 #   Deletes the file /var/run/holbertonscript.pid and terminates upon
 #+  receiving a SIGQUIT or SIGTERM.
 
-terminator() {
-  rm /var/run/holbertonscript.pid
+echo "$$" > /var/run/myscript.pid
+
+termfunc() {
+  rm /var/run/myscript.pid
   exit
 }
 
-echo "$$" > /var/run/holbertonscript.pid
 
 while true
 do
